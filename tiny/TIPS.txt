@@ -1,0 +1,32 @@
+TODO:
+    error_handling wrapper functions:
+        read: Sometimes, calling read to receive bytes from a socket that has been prematurely closed will cause
+            read to return -1 with errno set to ECONNRESET.
+        write: Sometimes, calling write to send bytes on a socket that has been prematurely closed will cause
+            write to return -1 with errno set to EPIPE.
+        deal with SIGPIPE signal
+
+HINTS:
+    accept a command line argument specifying the listening port number for my proxy
+    listen for incoming connections
+    read the entirety of the request
+    parse the request
+    remember that port is optional
+    determine whether it is valid
+    if it is malformed, ignore it
+    establish its own connection to the appropriate web server
+    the first line of the start routine should be pthread_detach(pthread_self())
+    deal with race conditions
+    always send a Host header. If it is attached by the web browser, use it.
+    always send a User-Agent header
+    always send a connection header
+    always send a Proxy-Connection header
+    forward other headers
+    request the object the client specified
+    read the server's response
+    forward it to the client
+
+    every HTTP request is terminated by an empty line
+
+    account for binary data when selecting and using
+        functions for network I/O and cache
