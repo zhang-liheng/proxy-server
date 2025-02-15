@@ -2,8 +2,8 @@
  * Name: Zhang Liheng
  * ID: 2200013214
  *
- * A cache storing content from web server, identifying objects by URL.
- * Employs the reader-writer model by using rwlock provided by pthread.
+ * A cache storing content from the web server, identifying objects by URL.
+ * It employs the reader-writer model by using rwlock provided by pthread.
  */
 
 #include "csapp.h"
